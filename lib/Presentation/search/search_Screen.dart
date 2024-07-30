@@ -27,7 +27,7 @@ class SearchScreen extends StatelessWidget {
               kheight20,
               BlocBuilder<SearchBloc, SearchState>(
                 builder: (context, state) {
-                  print(state);
+               
                   if (state is SearchidleState) {
                     return Expanded(
                         child: SearchIdle(

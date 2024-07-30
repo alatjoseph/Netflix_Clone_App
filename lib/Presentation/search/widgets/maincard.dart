@@ -10,6 +10,7 @@ class MainCard extends StatelessWidget {
   String release_date;
   String title;
   double rating;
+  int movieId;
   MainCard(
       {super.key,
       required this.posterpath,
@@ -17,7 +18,8 @@ class MainCard extends StatelessWidget {
        required this.overview,
        required this.release_date,
       required this.title,
-      required this.rating
+      required this.rating,
+      required this.movieId
       });
 
   @override
@@ -41,6 +43,7 @@ class MainCard extends StatelessWidget {
               rating: rating,
                release_date: release_date,
               title: title,
+              movieId: movieId,
             );
           },
         ));

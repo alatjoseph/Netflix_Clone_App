@@ -4,8 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
+import 'package:netflix/Presentation/search/widgets/castlist.dart';
 import 'package:netflix/core/constants.dart';
 import 'package:netflix/infrastructure/api_key.dart';
+import 'package:netflix/infrastructure/models/search/castmodel.dart';
 
 class ViewOverview extends StatelessWidget {
   ViewOverview(
@@ -15,17 +17,20 @@ class ViewOverview extends StatelessWidget {
       required this.overview,
       required this.rating,
       required this.release_date,
-      required this.poster_path});
+      required this.poster_path,
+      required this.movieId});
   String title;
   String image;
   String overview;
   String release_date;
   double rating;
   String poster_path;
+  int movieId;
   @override
   Widget build(BuildContext context) {
-    
-    fetchMovieCast(533535);
+    Future<List<Castmodel>>? castFuture;
+    castFuture = fetchMovieCast(movieId);
+
     String formattedRating = rating.toStringAsFixed(1);
     DateTime parsedDate = DateTime.parse(release_date);
     String formattedDate = DateFormat('dd-MM-yyyy').format(parsedDate);
@@ -122,6 +127,19 @@ class ViewOverview extends StatelessWidget {
                   color: Colors.grey,
                 ),
               ),
+              kheight20,
+              const Text(
+                'Cast',
+                style: TextStyle(
+                  decoration: TextDecoration.none,
+                  fontSize: 23,
+                  color: Colors.white,
+                ),
+              ),
+              kheight,
+              CastListWidget(
+                castFuture: castFuture,
+              ),
             ],
           ),
         ),
@@ -129,7 +147,7 @@ class ViewOverview extends StatelessWidget {
     );
   }
 
-  Future<void> fetchMovieCast(int movieId) async {
+  Future<List<Castmodel>> fetchMovieCast(int movieId) async {
     final response = await http.get(
       Uri.parse(
           'https://api.themoviedb.org/3/movie/$movieId/credits?api_key=$apiKey'),
@@ -138,13 +156,18 @@ class ViewOverview extends StatelessWidget {
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
       final castList = data['cast'];
-      for (var cast in castList) {
+      List<Castmodel> castModels = [];
 
-        print('Name: ${cast['name']}, Character: ${cast['character']}');
+      for (var cast in castList) {
+        castModels.add(Castmodel(
+            actorName: cast['name'],
+            characterName: cast['character'],
+            profile_photo: cast['profile_path']));
       }
+
+      return castModels;
     } else {
-      print('Failed to load cast list');
-      
+      return [];
     }
   }
 }

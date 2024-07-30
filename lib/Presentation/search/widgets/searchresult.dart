@@ -24,7 +24,7 @@ class Searchresult extends StatelessWidget {
                rating:  searchdata[index].vote_average,
                release_date:  searchdata[index].releasedata,
               title:  searchdata[index].title,
-              
+              movieId: searchdata[index].movieid,
             );
           },
         ));
