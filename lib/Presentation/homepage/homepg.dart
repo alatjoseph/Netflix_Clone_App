@@ -97,6 +97,7 @@ class Homepg extends StatelessWidget {
                                 child: Column(
                                   children: [
                                     Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Image(
                                           image: NetworkImage(
@@ -104,8 +105,9 @@ class Homepg extends StatelessWidget {
                                           ),
                                           width: 50,
                                           height: 50,
-                                        ),
-                                        Spacer(),
+                                        ), 
+                                           
+                                         Spacer(),
                                         Icon(
                                           Icons.cast,
                                           color: Colors.white,

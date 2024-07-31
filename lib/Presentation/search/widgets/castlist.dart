@@ -35,7 +35,8 @@ class CastListWidget extends StatelessWidget {
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width / 3,
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                     
                       children: [
                         CircleAvatar(
                           radius: 46,

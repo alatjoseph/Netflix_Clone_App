@@ -15,7 +15,6 @@ class Idlehome extends StatelessWidget {
         Container(
           width: double.infinity,
           height: MediaQuery.of(context).size.height * .78,
-          //color: Colors.amber,
           decoration: const BoxDecoration(
               image: DecorationImage(
                   image: NetworkImage(

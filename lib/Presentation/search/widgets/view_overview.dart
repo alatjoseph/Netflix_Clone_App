@@ -1,12 +1,9 @@
-import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'package:netflix/Presentation/search/widgets/castlist.dart';
 import 'package:netflix/core/constants.dart';
-import 'package:netflix/infrastructure/api_key.dart';
+import 'package:netflix/infrastructure/datasources/search/castdatasource.dart';
 import 'package:netflix/infrastructure/models/search/castmodel.dart';
 
 class ViewOverview extends StatelessWidget {
@@ -147,27 +144,5 @@ class ViewOverview extends StatelessWidget {
     );
   }
 
-  Future<List<Castmodel>> fetchMovieCast(int movieId) async {
-    final response = await http.get(
-      Uri.parse(
-          'https://api.themoviedb.org/3/movie/$movieId/credits?api_key=$apiKey'),
-    );
-
-    if (response.statusCode == 200) {
-      final data = jsonDecode(response.body);
-      final castList = data['cast'];
-      List<Castmodel> castModels = [];
-
-      for (var cast in castList) {
-        castModels.add(Castmodel(
-            actorName: cast['name'],
-            characterName: cast['character'],
-            profile_photo: cast['profile_path']));
-      }
-
-      return castModels;
-    } else {
-      return [];
-    }
-  }
+ 
 }

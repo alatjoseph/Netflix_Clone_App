@@ -29,7 +29,7 @@ class CommingSoonCard extends StatelessWidget {
                 Row(
                   children: [
                     SizedBox(
-                      height: size.height / 1.8,
+                      height: size.height / 2.8,
                       width: 60,
                       child: Column(
                         children: [
@@ -52,7 +52,7 @@ class CommingSoonCard extends StatelessWidget {
                     ),
                     Expanded(
                       child: SizedBox(
-                        height: size.height / 1.6,
+                        height: size.height / 2,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [

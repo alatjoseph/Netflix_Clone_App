@@ -11,7 +11,6 @@ class EveryoneWatchingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  
     Size size = MediaQuery.of(context).size;
     return Padding(
         padding: const EdgeInsets.symmetric(
@@ -24,7 +23,7 @@ class EveryoneWatchingWidget extends StatelessWidget {
               return Column(
                 children: [
                   SizedBox(
-                    height: size.height / 1.59,
+                    height: size.height / 1.79,
                     width: double.infinity,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,16 +40,14 @@ class EveryoneWatchingWidget extends StatelessWidget {
                                 fontSize: 15,
                                 color: greyclr,
                                 fontWeight: FontWeight.bold)),
-                        kheight,
                         Expanded(
                           child: VideoWidget(
                             size: size,
                             imageurl: everyonewatchingdata[index].backdrop_path,
                           ),
                         ),
-                        kheight20,
                         const Padding(
-                          padding: EdgeInsets.only(right: 8,bottom: 14),
+                          padding: EdgeInsets.only(right: 8, bottom: 14),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [

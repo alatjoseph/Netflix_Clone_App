@@ -26,6 +26,7 @@ class SearchDatasourceImpl extends SearchDatasource {
       if (response.statusCode == 200) {
         Map<String, dynamic> decodedata = jsonDecode(response.body);
         final List<dynamic> results = decodedata['results'];
+        print(results);
         final List<SearchModel> searchdata = results.map((json) {
           if (json is Map<String, dynamic>) {
             return SearchModel.fromJson(json);
