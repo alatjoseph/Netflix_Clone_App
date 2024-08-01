@@ -47,9 +47,9 @@ class Homepg extends StatelessWidget {
                               ),
                               kheight,
                               Cardlist(
-                                      image_List: state.pastyear_image_List,
-                                      count: state.pastyear_image_List.length,
-                                    ),
+                                image_List: state.pastyear_image_List,
+                                count: state.pastyear_image_List.length,
+                              ),
                               const Maincardtitle(
                                 title: 'Trending Now',
                               ),
@@ -92,29 +92,28 @@ class Homepg extends StatelessWidget {
                               width: double.infinity,
                               color: Colors.black.withOpacity(.5),
                               child: const Padding(
-                                padding:
-                                    EdgeInsets.symmetric(horizontal: 12),
+                                padding: EdgeInsets.symmetric(horizontal: 12),
                                 child: Column(
                                   children: [
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         Image(
-                                          image: NetworkImage(
+                                           image:
+                                          NetworkImage(
                                             'https://static.vecteezy.com/system/resources/previews/022/101/069/original/netflix-logo-transparent-free-png.png',
                                           ),
                                           width: 50,
                                           height: 50,
-                                        ), 
-                                           
-                                         Spacer(),
+                                        ),
+                                        Spacer(),
                                         Icon(
                                           Icons.cast,
                                           color: Colors.white,
                                           size: 27,
                                         ),
                                         kwidth,
-                                     
                                       ],
                                     ),
                                     kheight,

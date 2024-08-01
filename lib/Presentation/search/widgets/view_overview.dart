@@ -93,7 +93,7 @@ class ViewOverview extends StatelessWidget {
                 children: [
                   const Icon(
                     Icons.calendar_month,
-                    color: greyclr,
+                    color: Colors.grey, 
                   ),
                   kwidth,
                   Text(
@@ -101,7 +101,7 @@ class ViewOverview extends StatelessWidget {
                     style: const TextStyle(
                       decoration: TextDecoration.none,
                       fontSize: 16,
-                      color: Colors.grey,
+                      color: Colors.green, 
                     ),
                   ),
                 ],

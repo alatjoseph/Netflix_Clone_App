@@ -7,7 +7,6 @@ import 'package:netflix/application/new&hot/commig_soon/comming_soon_bloc.dart';
 import 'package:netflix/application/new&hot/everyone_watching/everyone_watching_bloc.dart';
 import 'package:netflix/application/search/search_bloc.dart';
 
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -33,13 +32,13 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) =>
-              SearchBloc()..add(const SearchidleEvent(query:'')),
+              SearchBloc()..add(const SearchidleEvent(query: '')),
         ),
         BlocProvider(
           create: (context) => DownloadsBloc()..add(DownloadImageEvent()),
         ),
       ],
-      child:  MaterialApp(
+      child: MaterialApp(
         theme: ThemeData(
             appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent),
             primaryColor: Colors.white,
@@ -50,8 +49,9 @@ class MyApp extends StatelessWidget {
                 bodyMedium: TextStyle(color: Colors.white),
                 bodySmall: TextStyle(color: Colors.white))),
         debugShowCheckedModeBanner: false,
-        home: Mainscreen(),
-        //videoUrl: 'https://www.youtube.com/watch?v=RY5aH21ohU4',
+        home:   Mainscreen(), 
+  
+      
       ),
     );
   }

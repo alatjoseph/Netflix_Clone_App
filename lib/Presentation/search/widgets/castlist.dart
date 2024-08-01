@@ -48,7 +48,7 @@ class CastListWidget extends StatelessWidget {
                               child: ClipOval(
                                 child: Image.network(
                                   cast.profile_photo == null
-                                      ? 'https://via.placeholder.com/100'
+                                      ? 'https://th.bing.com/th/id/OIP.XtNBQjfvbBAcn9g6xkzVJwAAAA?rs=1&pid=ImgDetMain'
                                       : 'https://image.tmdb.org/t/p/w200${cast.profile_photo}',
                                   // Placeholder image if no profile photo
                                   fit: BoxFit.cover,
