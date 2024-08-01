@@ -105,7 +105,7 @@ class Homepg extends StatelessWidget {
                                             'https://static.vecteezy.com/system/resources/previews/022/101/069/original/netflix-logo-transparent-free-png.png',
                                           ),
                                           width: 50,
-                                          height: 50,
+                                          height: 50
                                         ),
                                         Spacer(),
                                         Icon(
