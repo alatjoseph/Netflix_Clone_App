@@ -90,35 +90,3 @@ class VideoScreenItems extends StatelessWidget {
     );
   }
 }
-
-// class VideoPlayerWidget extends StatefulWidget {
-//   const VideoPlayerWidget({super.key});
-
-//   @override
-//   State<VideoPlayerWidget> createState() => _VideoPlayerWidgetState();
-// }
-
-// class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
-//   late FlickManager flickManager;
-
-//   @override
-//   void initState() {
-//     super.initState();
-
-//     flickManager = FlickManager(
-//       videoPlayerController: VideoPlayerController.networkUrl(
-//         Uri.parse('https://www.youtube.com/watch?v=RY5aH21ohU4'),
-//       ),
-//     );
-//   }
-// @override
-//   void dispose() {
-//     flickManager.dispose();
-//     super.dispose();
-    
-//   }
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(child: FlickVideoPlayer(flickManager: flickManager));
-//   }
-// }
