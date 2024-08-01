@@ -33,7 +33,7 @@ The Netflix Clone App is a mobile application designed to mimic the basic functi
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/alatjoseph/NetflixClone.git
+   git clone https://github.com/alatjoseph/Netflix_Clone_App.git
    cd NetflixClone
    ```
 
